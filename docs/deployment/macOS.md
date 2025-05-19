@@ -7,7 +7,7 @@ macOS applications are typically distributed in a `.app` [application bundle](ht
 
 With Avalonia, you'll have a `.app` folder structure that looks like this:
 
-```csharp
+```
 MyProgram.app
 |
 ----Contents\
@@ -104,7 +104,7 @@ Add other runtime identifiers as necessary. Each one should be separated by a se
 
 This type of icon file can not only be created on Apple devices, but it is also possible on Linux devices.  
 You can find more information about how you can achieve that in this blog post:  
-[Creating Mac OS X Icons (icns) on Linux](https://dentrassi.de/2014/02/25/creating-mac-os-x-icons-icns-on-linux/)
+[Creating macOS Icons (icns) on Linux](https://dentrassi.de/2014/02/25/creating-mac-os-x-icons-icns-on-linux/)
 
 ### Notes on the `.app` executable file
 
@@ -121,6 +121,8 @@ The file that is actually executed by macOS when starting your `.app` bundle wil
 ```
 
 * Add `-p:UseAppHost=true` to your `dotnet publish` command.
+
+Additionally, you might want to add the '-p:PublishSingleFile=true' to your dotnet command, compiling most of the DLLs into a your single application, simplifying the signing and notarizing process. 
 
 ### dotnet-bundle
 

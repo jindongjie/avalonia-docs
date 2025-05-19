@@ -131,7 +131,8 @@ Your next step is to make sure that the main window view knows how to start the 
 - Add the `DoShowDialogAsync` method as follows:
 
 ```csharp
-private async Task DoShowDialogAsync(InteractionContext<MusicStoreViewModel,
+// This code is only valid in newer ReactiveUI which is shipped since avalonia 11.2.0 
+private async Task DoShowDialogAsync(IInteractionContext<MusicStoreViewModel,
                                         AlbumViewModel?> interaction)
 {
      var dialog = new MusicStoreWindow();
@@ -170,7 +171,7 @@ namespace Avalonia.MusicStore.Views
                 action(ViewModel!.ShowDialog.RegisterHandler(DoShowDialogAsync)));
         }
 
-        private async Task DoShowDialogAsync(InteractionContext<MusicStoreViewModel, 
+        private async Task DoShowDialogAsync(IInteractionContext<MusicStoreViewModel, 
                                                 AlbumViewModel?> interaction)
         {
             var dialog = new MusicStoreWindow();
@@ -207,7 +208,7 @@ Follow this procedure:
 - Add attributes for the width and height of the dialog, set at 1000 and 550 respectively.
 - Add the start-up position attribute set to `CenterOwner`, as shown:
 
-```
+```xml
 <Window ...
     Width="1000" Height="550"
     WindowStartupLocation="CenterOwner">

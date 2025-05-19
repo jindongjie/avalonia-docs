@@ -10,13 +10,24 @@ import AvaloniaVsExtensionNuGetScreenshot from '/img/get-started/avalonia-vs-ext
 
 You can create an Avalonia application using any code editor, but using an IDE will give you support for authoring Avalonia XAML files with a previewer and code completion.
 
-## JetBrains Rider
+## Recommended IDE: JetBrains Rider
 
-The [JetBrains Rider](https://www.jetbrains.com/rider/) IDE has built-in support for Avalonia XAML [starting in 2020.3](https://www.jetbrains.com/rider/whatsnew/2020-3/#version-2020-3-avalonia-support) including first-class support for Avalonia-specific XAML features and custom code inspections.
+The [JetBrains Rider](https://www.jetbrains.com/rider/) IDE has built-in support for Avalonia XAML starting in 2020.3 including first-class 
+support for Avalonia-specific XAML features and custom code inspections. Now that Rider is free for individual use, we strongly recommend it as the primary IDE for Avalonia development, especially for developers on macOS and Linux.
 
-See the [JetBrains Rider 2020.3 release announcement](https://www.jetbrains.com/rider/whatsnew/2020-3/#version-2020-3-avalonia-support) for more information.
+Rider offers the most complete and polished development experience for Avalonia, with built-in features including:
 
-Rider does not yet provide a visual designer, but this is in development. See [the GitHub project](https://github.com/ForNeVeR/AvaloniaRider) for more information and instructions on how to install.
+* Advanced XAML completion and navigation
+* Rich code analysis and quick-fixes
+* Comprehensive debugging tools
+* Built-in performance profiling
+
+### AvaloniaRider Plugin
+The 3rd party [AvaloniaRider](https://plugins.jetbrains.com/plugin/14839-avaloniarider) plugin adds the [Avalonia file templates](./install.md) to Rider, as well as enables live XAML preview functionality.
+
+While Rider includes native Avalonia XAML support out of the box, This plugin provides a live preview of your XAML changes as you type, similar to the preview feature available in Visual Studio and Visual Studio Code.
+
+Note that the plugin is optional - you can develop Avalonia applications in Rider without it, but the live preview capability and file templates makes XAML development more efficient.
 
 ## Visual Studio
 
@@ -24,7 +35,7 @@ If you're developing Avalonia with Visual Studio you should install the [Avaloni
 
 <img className="center" src={AvaloniaVsExtensionMarketplaceScreenshot} alt="" />
 
-The extension provides intellisense support for Avalonia XAML together with a previewer.
+The extension provides IntelliSense support for Avalonia XAML together with a previewer.
 
 To install the Avalonia for Visual Studio extension:
 
@@ -43,8 +54,17 @@ If you are using VS2019 or VS2017 you will need to download the extension for ol
 :::
 
 ## Visual Studio Code 
-The Avalonia for [Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia) contains support for Avalonia XAML autocomplete and previewer.
+The Avalonia for [Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia) contains basic support for Avalonia XAML autocomplete and previewer. While functional, the development experience is not as rich as what you'll find in Rider or Visual Studio. For developers on macOS and Linux requiring a full IDE experience, we recommend using JetBrains Rider instead.
 
+If you still prefer to use VS Code, you can install the extension from the [Visual Studio Code marketplace](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.vscode-avalonia).
+
+## Editor Comparison
+
+For the best Avalonia development experience:
+
+* **Windows**: Use either JetBrains Rider or Visual Studio
+* **macOS/Linux**: Use JetBrains Rider
+* **Lightweight Editor**: Visual Studio Code can be used but offers a more limited feature set
 
 
 

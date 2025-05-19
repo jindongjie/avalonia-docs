@@ -2,22 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 @font-face {
-  font-family: 'Outfit';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  src: url('https://fonts.gstatic.com/s/outfit/v11/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1O4i0EwItq6fNIhnL.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: "Nunito", sans-serif;
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  src: url('https://fonts.gstatic.com/s/nunito/v26/XRXV3I6Li01BKofINeaBTMnFcQ.woff2') format('woff2');
-}
-
-@font-face {
   font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 200 800;
@@ -55,7 +39,7 @@
 
 @layer base {
   :root {
-    --docs-color-primary-100: 200 109 255;
+    --docs-color-primary-100: 26 144 255;
     --docs-color-primary-200: 33 96 253;
 
     --docs-color-secondary-700: 232 232 236;
@@ -1288,12 +1272,12 @@ html[data-theme='dark'] .video_sidebar_header > div > a::before {
 }
 
 img.center {
-  width: auto;
+  width: auto !important;
   max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 1rem;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-bottom: 1rem !important;
 }
 
 .dropdown__menu 
@@ -1375,3 +1359,86 @@ img.center {
   }
 }
 
+.hello-bar {
+  background-color: #1b2a4e;
+  background-image: linear-gradient(#0003, #0003);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.hello-bar:hover {
+  text-decoration: underline;
+  text-decoration-color: #1b2a4e; /* Red underline */
+}
+
+.u-hflex-center-center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.u-gap-10 {
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  display: flex;
+}
+
+.u-hflex-center-center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.u-hflex-left-center {
+  flex-flow: wrap;
+  align-items: center;
+  display: flex;
+}
+
+.ph_cat {
+  width: 28px;
+  height: auto;
+}
+.ph_banner_txt {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.banner_separator {
+  background-color: #fff;
+  width: 1px;
+  height: 20px;
+}
+
+.hello_bar_cta {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 6px 12px 6px 14px;
+}
+
+.u-gap-8 {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+}
+
+.u-hflex-left-center {
+  flex-flow: wrap;
+  align-items: center;
+  display: flex;
+}
+
+.text-block-98 {
+  color: #1a1c21;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.image-213 {
+  width: 16px;
+  height: 16px;
+}

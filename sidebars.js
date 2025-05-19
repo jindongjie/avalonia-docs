@@ -5,6 +5,8 @@ const sidebars = {
 
   documentationSidebar: [
     'welcome',
+    'overview/what-is-avalonia',
+    'overview/supported-platforms',
     {
       'type': 'category',
       'label': 'Get Started',
@@ -86,6 +88,7 @@ const sidebars = {
           'label': 'ToDo List App',
           'href': 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CompleteApps/SimpleToDoList' ,
         },
+        'tutorials/groupbox',
         {
           'type': 'category',
           'label': 'Music Store App',
@@ -175,6 +178,7 @@ const sidebars = {
                 'basics/user-interface/styling/styles',
                 'basics/user-interface/styling/style-classes',
                 'basics/user-interface/styling/control-themes',
+                'basics/user-interface/styling/container-queries',
                 {
                   'type': 'category',
                   'label': 'Themes',
@@ -302,6 +306,7 @@ const sidebars = {
             'guides/graphics-and-animation/how-to-use-icons',
             'guides/graphics-and-animation/keyframe-animations',
             'guides/graphics-and-animation/transitions',
+            'guides/graphics-and-animation/gradients',
             {
               'type': 'category',
               'label': 'Page Transitions',
@@ -455,6 +460,7 @@ const sidebars = {
             'concepts/input/focus',
             'concepts/input/gestures',
             'concepts/input/hotkeys',
+            'concepts/input/binding-key-and-mouse',
           ],
         },
         'concepts/the-main-window',
@@ -517,8 +523,9 @@ const sidebars = {
             },
               ],
         },
+        'concepts/image-interpolation',
+        'concepts/blend-modes',
         'concepts/templated-controls',
-        'concepts/themes',
         'concepts/ui-composition',
         'concepts/unhandledexceptions',
         'concepts/toplevel',
@@ -535,6 +542,7 @@ const sidebars = {
       'items': [
         'deployment/macOS',
         'deployment/debian-ubuntu',
+        'deployment/native-aot',
       ],
     },
     {
@@ -552,7 +560,12 @@ const sidebars = {
       ],
     },
     'faq',
-    'community'
+    'community',
+    {
+      type: 'link',
+      label: 'API Reference', // The link label
+      href: 'https://api-docs.avaloniaui.net/docs/category/avalonia', // The external URL
+    },
   ],
 };
 

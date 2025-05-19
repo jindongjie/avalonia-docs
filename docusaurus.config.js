@@ -102,9 +102,6 @@ const config = {
             current: {
               label: "11.0.x",
               banner: "none"
-            },
-            "0.10.x": {
-              banner: "none"
             }
           }
         },
@@ -120,6 +117,43 @@ const config = {
   ],
   plugins: [
     require('./plugins/tailwind-plugin.cjs'),
+    function cioPlugin() {
+      return {
+        name: 'docusaurus-plugin-cio',
+        injectHtmlTags() {
+          return {
+            headTags: [
+              {
+                tagName: 'script',
+                innerHTML: `
+                  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdp-eu.customer.io/v1/analytics-js/snippet/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._writeKey=key;analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.15.3";
+                  analytics.load("4fe6898c1dcf35b4fb67");
+                  analytics.page();
+                  }}();
+
+                  function getCookie(name) {
+                      const value = \`; \${document.cookie}\`;
+                      const parts = value.split(\`; \${name}=\`);
+                      if (parts.length === 2) {
+                          return parts.pop().split(';').shift();
+                      }
+                      return null;
+                  }
+
+                  // Wait for DOM content to be loaded
+                  document.addEventListener('DOMContentLoaded', function() {
+                      const userId = getCookie('user_id');
+                      if (userId) {
+                          analytics.identify(userId, {});
+                      }
+                  });
+                `,
+              }
+            ],
+          };
+        },
+      };
+    },
     require.resolve('docusaurus-plugin-image-zoom'),
     [
       '@docusaurus/plugin-client-redirects',
@@ -129,24 +163,46 @@ const config = {
       "@gracefullight/docusaurus-plugin-microsoft-clarity",
       { projectId: "hqhy3ac3l1" },
     ],
-  ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'xpf',
+        path: 'xpf',
+        routeBasePath: 'xpf',
+        sidebarPath: require.resolve('./xpf-sidebar.js'),
+        editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
+        editLocalizedFiles: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'accelerate',
+        path: 'accelerate',
+        routeBasePath: 'accelerate',
+        sidebarPath: require.resolve('./accelerate-sidebar.js'),
+        editUrl: 'https://github.com/AvaloniaUI/avalonia-docs/tree/main',
+        editLocalizedFiles: true,
+      },
+    ],
+],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/social-card.png',
-      announcementBar: {
-        id: 'support_us',
-        content:
-          'Get the help you need with our <a target="_blank" rel="noopener noreferrer" href="https://avaloniaui.net/Support">Enhanced Support!</a>',
-        backgroundColor: '#0d6efd',
-        textColor: '#ffffff',
-        isCloseable: false,
-      },
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
         respectPrefersColorScheme: true,
+      },
+      announcementBar: {
+        id: 'accelerate',
+        content:
+          'Accelerate your Avalonia development - <a target="_blank" rel="noopener noreferrer" href="https://avaloniaui.net/accelerate">see what you’re missing.</a>',
+        backgroundColor: '#0043FF',
+        textColor: '#FFFFFF',
+        isCloseable: false,
       },
       docs: {
         sidebar: {
@@ -174,8 +230,18 @@ const config = {
         },
         items: [
           {
-            label: 'Documentation',
-            to: '/docs/welcome'
+            label: 'Avalonia Docs',
+            to: '/docs/welcome',
+            activeBasePath: '/docs'
+          },
+          {
+            label: 'Accelerate',
+            to: '/accelerate/welcome',
+          },
+          {
+            label: 'Avalonia XPF',
+            to: '/xpf/welcome',
+            activeBasePath: '/xpf'
           },
           {
               label: 'Resources',
@@ -191,12 +257,8 @@ const config = {
           },
           {
             label: 'Support',
-            to: 'https://avaloniaui.net/support',
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-          },
+            to: 'https://avaloniaui.net/support?utm_source=docs&utm_medium=referral&utm_content=nav_link',
+          },          
           {
             type: 'localeDropdown',
             position: 'right',
@@ -241,7 +303,7 @@ const config = {
             items: [
               {
                 label: 'Blog',
-                href: 'https://avaloniaui.net/Blog',
+                href: 'https://avaloniaui.net/blog?utm_source=docs&utm_medium=referral&utm_content=nav_link',
               },
               {
                 label: 'GitHub',
@@ -268,3 +330,4 @@ const config = {
 };
 
 module.exports = config;
+

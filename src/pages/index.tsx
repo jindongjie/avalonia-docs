@@ -11,8 +11,8 @@ import HelpSection from '../components/homepage/HelpSection';
 import HomeFooter from '../components/homepage/HomeFooter';
 import ResourcesSection from '../components/homepage/ResourcesSection';
 import CTASection from '../components/homepage/CallToActionSection';
-
-
+import HelloBar from '../components/homepage/HelloBar';
+import HeroQuickLinks from '../components/homepage/HeroQuickLinks';
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
@@ -21,12 +21,13 @@ export default function Home(): JSX.Element {
       title={`${siteConfig.title}`}
       description="Learn to build with Avalonia"
       noFooter>
-
+      <HelloBar/>
       <HeroSection/>
+
+      <HeroQuickLinks />
+
       <GuidesAndSamplesSection/>
       
-      <CTASection/>
-
       <div className="z-0">
         <HelpSection className="-mb-48" />
       </div>

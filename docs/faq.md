@@ -4,7 +4,7 @@ title: FAQ
 ---
 
 ## What is Avalonia?
-Avalonia is an open-source, cross-platform UI framework. It is part of the [.NET Foundation](https://dotnetfoundation.org/) and considered to be one of the most active community projects within it. It's designed for creating flexible and beautiful user interfaces. Avalonia supports a wide array of application development platforms, including Windows, Linux, macOS, iOS, Android and WebAssembly.
+Avalonia is an open-source, cross-platform UI framework. It is the most popular cross-platform UI framework for .NET developers. It's designed for creating flexible and beautiful user interfaces. Avalonia supports a wide array of application development platforms, including Windows, Linux, macOS, iOS, Android and WebAssembly.
 
 Built on a modern .NET stack, Avalonia allows developers to write in C# or any other .NET language, and to define UIs using the XAML markup language. Similar to WPF, Avalonia uses a XAML-based styling system, and its layout system and binding infrastructure model offer a familiar environment for developers experienced with XAML-based frameworks.
 
@@ -63,7 +63,9 @@ Yes. You can code your entire UI with your preferred .NET language.
 
 ## Is there a drag and drop visual designer?
 
-No. Instead of providing a drag and drop designer, the Avalonia IDE extensions support a live previewer, which will render a preview of the UI, refreshing as you modify the XAML.
+We are working on bringing a full drag-and-drop designer experience to Avalonia in 2025. This designer will be part of [Avalonia Accelerate](https://github.com/AvaloniaUI/Avalonia/discussions/16997), a paid offering designed to enhance developer productivity in the Avalonia ecosystem.
+
+Avalonia Accelerate will help developers build applications more efficiently through visual design tools, complementing the existing XAML-first approach that Avalonia is known for.
 
 ---
 
